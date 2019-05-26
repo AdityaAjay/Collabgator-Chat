@@ -5,6 +5,11 @@
     window.location.href = "/signin"
 </script>
 {% endif %}
+{% if postsignmsg %}
+<script>
+alert('{{ postsignmsg }}')
+</script>
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>

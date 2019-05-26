@@ -23,9 +23,9 @@ from login.views import *
 # this function is being used to redirect all stray URLs to the sign in page
 def redirect(request):
     return HttpResponse("""<meta http-equiv="refresh" content="0; url=http://example.com">
-        <script type="text/javascript">
-            window.location.href = "/signin"
-        </script>""")
+            <script type="text/javascript">
+                window.location.href = "/signin"
+            </script>""")
 
 
 admin.autodiscover()
@@ -45,6 +45,6 @@ urlpatterns = [
     url(r'^postforgot/', postforgotpassword),
 
     url(r'^$', signIn),
-    #url(r'^', signIn)
+    url(u'^.*', redirect)
 
 ]

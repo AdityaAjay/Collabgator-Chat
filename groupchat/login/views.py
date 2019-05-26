@@ -62,11 +62,12 @@ def postsignup(request):
         uid = user['localId']
         data = {"name": name, "status": "1"}
         database.child("users").child(uid).child("details").set(data)
+        postsignmsg = "Account created successfully. Please sign in."
     except:
         message = "Unable to create account try again"
         return render(request, "signup.html", {"messg": message})
 
-    return render(request, "login.html")
+    return render(request, "login.html",{"postsignmsg": postsignmsg})
 
 
 def roomselected(request):
