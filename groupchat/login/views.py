@@ -74,15 +74,24 @@ def roomselected(request):
     responseURL = f"""<script type="text/javascript">
         window.location.href = "/chat/{roomid}"    
         </script>"""
+    HttpResponse("""<script> var password = prompt("Please enter the password for the chatroom");
+    </script""")
     return HttpResponse(responseURL)
 
 
 def forgotpassword(request):
     return render(request, "forgotpassword.html")
 
+# forgot password functionality
+def postforgotpassword(request):
+    email = request.POST.get('email')
+    authe.send_password_reset_email(email)
+    msg = 'pass'
+    return render(request, 'login.html', {"msg": email})
 
+# logout functionality
 def logout(request):
     global signedIn
     signedIn = False
-    auth.logout(request)
+    authe.logout(request)
     return render(request, 'login.html')

@@ -1,5 +1,10 @@
 {% load staticfiles %}
-
+{% if msg %}
+<script>
+    alert('Password reset link sent to {{ msg }}.');
+    window.location.href = "/signin"
+</script>
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +73,7 @@
 							Forgot
 						</span>
                     <a class="txt2" href="/forgotpassword">
-                        Username / Password?
+                       Password?
                     </a>
                 </div>
 

@@ -40,6 +40,7 @@ urlpatterns = [
     url(r'^postsignup/', postsignup, name='postsignup'),
     url(r'^logout/', logout, name='postsignup'),
     url(r'^roomselected', roomselected),
+    url(r'^postforgot', postforgotpassword),
 
     url(r'^$', signIn)
 
