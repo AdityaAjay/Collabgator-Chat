@@ -1,0 +1,42 @@
+{% extends 'chat/_base.html' %}
+
+
+{% block title %}{{ location.pathname }}{% endblock %}
+{% block content %}
+
+    <h4>Welcome to Collabgator's Chat Room </h4>
+
+    <div id='mess' style=" border: solid cornflowerblue; padding: 10px; ">
+
+    </div>
+
+    <h5>Type your message here:</h5>
+    <input id='send'>
+
+{% endblock content %}
+
+{% block script %}
+
+    <script>
+        socket = new WebSocket("ws://" + window.location.host + "/" + location.pathname.replace('/', '') + "/");
+        socket.onmessage = function (e) {
+            $('#mess').append('<p>' +'{{ email }}'+ e.data + '</p>')
+            //add user's name here in append before e.data
+        }
+        socket.onopen = function () {
+
+            $('#mess').append('<p>' + 'Currently sending messages to: ' + location.pathname.replace('/', '') + '</p>')
+        }
+        // Call onopen directly if socket is already open
+        if (socket.readyState == WebSocket.OPEN) socket.onopen();
+
+
+        $("#send").on("change", function () {
+            if (this.value != '') {
+                socket.send(this.value);
+            }
+            this.value = ''
+        });
+
+    </script>
+{% endblock script %}
