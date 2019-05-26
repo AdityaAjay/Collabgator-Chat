@@ -128,15 +128,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
-    '/home/aditya/Desktop/Collabgator_GroupChat/groupchat/chat/templates/static/',
-    '/home/aditya/Desktop/Collabgator_GroupChat/groupchat/chat/templates/static/css/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/css/',
 
-    '/home/aditya/Desktop/Collabgator_GroupChat/groupchat/chat/templates/static/fonts/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/fonts/',
 
-    '/home/aditya/Desktop/Collabgator_GroupChat/groupchat/chat/templates/static/images/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/images/',
 
-    '/home/aditya/Desktop/Collabgator_GroupChat/groupchat/chat/templates/static/js/',
-    '/home/aditya/Desktop/Collabgator_GroupChat/groupchat/chat/templates/static/vendor/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/js/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/vendor/',
 
 ]
 STATIC_URL = '/static/'

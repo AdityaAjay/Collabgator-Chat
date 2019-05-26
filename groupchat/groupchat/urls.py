@@ -29,7 +29,9 @@ def redirect(request):
 
 
 admin.autodiscover()
-
+url_list = ['admin', 'chat', 'signin', 'postsign', 'forgotpassword', 'signup', 'postsignup', 'logout',
+            'roomselected', 'postforgot'
+            ]
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^chat/', include('chat.urls', namespace='chat')),
@@ -39,9 +41,10 @@ urlpatterns = [
     url(r'^signup/', signUp, name='signup'),
     url(r'^postsignup/', postsignup, name='postsignup'),
     url(r'^logout/', logout, name='postsignup'),
-    url(r'^roomselected', roomselected),
-    url(r'^postforgot', postforgotpassword),
+    url(r'^roomselected/', roomselected),
+    url(r'^postforgot/', postforgotpassword),
 
-    url(r'^$', signIn)
+    url(r'^$', signIn),
+    #url(r'^', signIn)
 
 ]

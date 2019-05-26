@@ -93,5 +93,8 @@ def postforgotpassword(request):
 def logout(request):
     global signedIn
     signedIn = False
-    authe.logout(request)
-    return render(request, 'login.html')
+    auth.logout(request)
+    return HttpResponse("""<script type="text/javascript">
+        alert('Logged out successfully.')
+        window.location.href = "/signin"    
+        </script>""")
