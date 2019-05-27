@@ -9,9 +9,7 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
-
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -137,17 +135,27 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+staticDirectory = os.getcwd()
+staticDirectory = staticDirectory[:-9]
+staticDirectory+="chat/templates/static/"
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,"static"),
+#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/',
+#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/css/',
+#
+#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/fonts/',
+#
+#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/images/',
+#
+#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/js/',
+#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/vendor/',
+#
+# ]
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
-    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/',
-    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/css/',
-
-    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/fonts/',
-
-    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/images/',
-
-    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/js/',
-    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/vendor/',
+    staticDirectory
 
 ]
 STATIC_URL = '/static/'
+
