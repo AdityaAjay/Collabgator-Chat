@@ -15,6 +15,7 @@ Program flow -
 3) Sign up and Forgot Password functionality is also employed thorugh Firebase
 4) After signin, option to select chatroom is provided 26 May
 5) Added password protection to chatrooms 27 May 19:55
+        root /chat url is open for all. Password is empty string.
 
 
 TO DO:
