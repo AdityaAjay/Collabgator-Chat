@@ -16,7 +16,10 @@ Including another URLconf
 
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.shortcuts import render, redirect
+
 from django.http import HttpResponse
+
 from login.views import *
 
 
@@ -27,6 +30,8 @@ def redirect(request):
                 window.location.href = "/signin"
             </script>""")
 
+def roomselectagain(request):
+    return render(request, "selectroom.html")
 
 admin.autodiscover()
 url_list = ['admin', 'chat', 'signin', 'postsign', 'forgotpassword', 'signup', 'postsignup', 'logout',
@@ -43,6 +48,7 @@ urlpatterns = [
     url(r'^logout/', logout, name='postsignup'),
     url(r'^roomselected/', roomselected),
     url(r'^postforgot/', postforgotpassword),
+    url(r'^roomagain/', roomselectagain),
 
     url(r'^$', signIn),
     url(u'^.*', redirect)

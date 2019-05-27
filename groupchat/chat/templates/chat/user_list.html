@@ -1,16 +1,41 @@
 {% extends 'chat/_base.html' %}
 
-
 {% block title %}{{ location.pathname }}{% endblock %}
-{% block content %}
 
+
+{% block content %}
+    <script>
+        function checkPWD() {
+             //alert(location.pathname);
+            var password = prompt("Enter Password : ", "your password here");
+
+            var roomID = ["CSE", "CSE3"];
+            var roomPWD = ["hellohello", "hellohellohello"];
+
+            var room = (location.pathname).slice(6);
+            var flag = false;
+            for (var i = 0; i < roomPWD.length; i++) {
+                if (room == roomID[i]) {
+                    if (roomPWD[i] == password) {
+                        flag = true;
+                    }
+                }
+            }
+            return flag;
+        }
+
+        if (checkPWD() != true) {
+            alert("Incorrect password or Room not found. Please try again.");
+            window.location.href = "/roomagain/";
+        }
+    </script>
     <h4>Welcome to Collabgator's Chat Room </h4>
 
     <div id='mess' style=" border: solid cornflowerblue; padding: 10px; ">
 
     </div>
 
-    <h5>Type your message here:</h5>
+    <h5> Type your message here:</h5>
     <input id='send'>
 
 {% endblock content %}
@@ -20,7 +45,7 @@
     <script>
         socket = new WebSocket("ws://" + window.location.host + "/" + location.pathname.replace('/', '') + "/");
         socket.onmessage = function (e) {
-            $('#mess').append('<p>' +'{{ email }}'+ e.data + '</p>')
+            $('#mess').append('<p>' + '{{ email }}' + e.data + '</p>')
             //add user's name here in append before e.data
         }
         socket.onopen = function () {
@@ -40,3 +65,5 @@
 
     </script>
 {% endblock script %}
+
+

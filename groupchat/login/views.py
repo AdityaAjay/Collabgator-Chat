@@ -71,7 +71,9 @@ def postsignup(request):
 
 
 def roomselected(request):
+
     roomid = request.POST.get('roomid')
+
     responseURL = f"""<script type="text/javascript">
         window.location.href = "/chat/{roomid}"    
         </script>"""
@@ -99,3 +101,4 @@ def logout(request):
         alert('Logged out successfully.')
         window.location.href = "/signin"    
         </script>""")
+
