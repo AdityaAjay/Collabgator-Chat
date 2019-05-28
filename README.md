@@ -29,15 +29,14 @@ TO DO:
     Login/Landing Page:
     <img src="https://i.imgur.com/R8CoVaG.png" alt="Login">
     SignUp Page:
-        <img src="https://i.imgur.com/R8CoVaG.png" alt="Login">
-        <img src="https://i.imgur.com/1Lorl5W.png" alt="Login">
+        <img src="https://i.imgur.com/1Lorl5W.png" alt="Signup">
     Password Reset Page:
-        <img src="https://i.imgur.com/ZYF99SJ.png" alt="Login">
+        <img src="https://i.imgur.com/ZYF99SJ.png" alt="Password Reset">
     Select Chatroom Page:
-        <img src="https://i.imgur.com/hTcIRCk.png " alt="Login">
+        <img src="https://i.imgur.com/hTcIRCk.png " alt="Select Chatroom">
     Chatroom Password Prompt:
-        <img src="https://i.imgur.com/8UpIMn7.png" alt="Login">
+        <img src="https://i.imgur.com/8UpIMn7.png" alt="Chatroom password prompt">
     Chatroom:
-        <img src="https://i.imgur.com/oaPrr3i.png" alt="Login">
+        <img src="https://i.imgur.com/oaPrr3i.png" alt="Chatroom">
   </body>
   </html>
