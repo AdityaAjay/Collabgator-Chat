@@ -1,21 +1,22 @@
 {% extends 'chat/_base.html' %}
 
-{% block title %}{{ location.pathname }}{% endblock %}
 
 
 {% block content %}
     <script>
+        document.title = (location.pathname).slice(6) + " : Chat";
+
         function checkPWD() {
-             //alert(location.pathname);
+            //alert(location.pathname);
             var password = prompt("Enter Password : ", "your password here");
 
-            var roomID = ["CSE", "CSE3",""];
-            var roomPWD = ["hellohello", "hellohellohello",""];
+            var roomID = ["CSE", "CSE3", "", "ECE"];
+            var roomPWD = ["csepassword", "cse3password", "", "ecepassword"];
 
             var room = (location.pathname).slice(6);
             var flag = false;
             for (var i = 0; i < roomPWD.length; i++) {
-                if (room == roomID[i]) {
+                if (room == roomID[i]) {//|| room == roomID[i].toLowerCase() ) {
                     if (roomPWD[i] == password) {
                         flag = true;
                     }
@@ -49,8 +50,12 @@
             //add user's name here in append before e.data
         }
         socket.onopen = function () {
+            if (location.pathname.slice(6) < 1) {
+                $('#mess').append('<p>' + 'Currently sending messages to: Open chat ' + '</p>')
 
-            $('#mess').append('<p>' + 'Currently sending messages to: ' + location.pathname.replace('/', '') + '</p>')
+            } else {
+                $('#mess').append('<p>' + 'Currently sending messages to: ' + location.pathname.slice(6) + '</p>')
+            }
         }
         // Call onopen directly if socket is already open
         if (socket.readyState == WebSocket.OPEN) socket.onopen();

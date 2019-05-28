@@ -51,6 +51,6 @@ urlpatterns = [
     url(r'^roomagain/', roomselectagain),
 
     url(r'^$', signIn),
-    url(u'^.*', redirect)
+    #url(u'^.*', redirect)
 
 ]

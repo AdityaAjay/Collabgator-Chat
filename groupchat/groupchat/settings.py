@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b1kgozf#vcd0pm!j@2!@bsjrjg_k6qr^p&+ill&9%*qolnl7zm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # remove * to allow only 127.0.0.1
 ALLOWED_HOSTS = ['*']
 
@@ -139,23 +139,28 @@ staticDirectory = os.getcwd()
 staticDirectory = staticDirectory[:-9]
 staticDirectory+="chat/templates/static/"
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR,"static"),
-#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/',
-#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/css/',
-#
-#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/fonts/',
-#
-#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/images/',
-#
-#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/js/',
-#     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/vendor/',
-#
-# ]
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
-    staticDirectory
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/css/',
 
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/fonts/',
+
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/images/',
+
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/js/',
+    '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/vendor/',
 ]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR,"static"),
+#     staticDirectory,
+#     staticDirectory+"css/",
+#     staticDirectory + "fonts/",
+#     staticDirectory + "images/",
+#     staticDirectory + "js/",
+#     staticDirectory + "vendor/",
+#
+# ]
 STATIC_URL = '/static/'
 
+print(staticDirectory+"css/")
