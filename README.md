@@ -22,3 +22,27 @@ TO DO:
 1) Fix database of the project ( Can't add data to models ) -> Working fine for other projects.
 2) Show sender's email id with the message in the chat room.
 3) Generalise the directory of static files using pathlib. Currently pointing to my pc's directory.
+4) Add CSS to chat room page.
+
+<html>
+  <body>
+    Login/Landing Page:
+    <img src="https://i.imgur.com/R8CoVaG.png" alt="Login">
+
+    SignUp Page:
+        <img src="https://i.imgur.com/R8CoVaG.png" alt="Login">
+
+    Password Reset Page:
+        <img src="https://i.imgur.com/ZYF99SJ.png" alt="Login">
+
+    Select Chatroom Page:
+        <img src="https://i.imgur.com/hTcIRCk.png " alt="Login">
+
+    Chatroom Password Prompt:
+        <img src="https://i.imgur.com/8UpIMn7.png" alt="Login">
+
+    Chatroom:
+        <img src="https://i.imgur.com/oaPrr3i.png" alt="Login">
+
+  </body>
+  </html>
