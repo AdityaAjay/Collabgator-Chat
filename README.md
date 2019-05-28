@@ -29,7 +29,7 @@ TO DO:
     Login/Landing Page:
     <img src="https://i.imgur.com/R8CoVaG.png" alt="Login">
     SignUp Page:
-        <img src="https://i.imgur.com/R8CoVaG.png" alt="Login">
+        <img src="https://i.imgur.com/1Lorl5W.png" alt="Login">
     Password Reset Page:
         <img src="https://i.imgur.com/ZYF99SJ.png" alt="Login">
     Select Chatroom Page:
