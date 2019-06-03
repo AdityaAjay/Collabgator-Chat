@@ -48,6 +48,7 @@
         socket.onmessage = function (e) {
             $('#mess').append('<p>' + '{{ email }}' + e.data + '</p>')
             //add user's name here in append before e.data
+            //figure out dynamic naming
         }
         socket.onopen = function () {
             if (location.pathname.slice(6) < 1) {
@@ -57,7 +58,6 @@
                 $('#mess').append('<p>' + 'Currently sending messages to: ' + location.pathname.slice(6) + '</p>')
             }
         }
-        // Call onopen directly if socket is already open
         if (socket.readyState == WebSocket.OPEN) socket.onopen();
 
 

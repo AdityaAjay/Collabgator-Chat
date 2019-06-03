@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import pyrebase, time
+import pyrebase
 from django.contrib import auth
 
 signedIn = False
@@ -14,6 +14,7 @@ config = {
     'messagingSenderId': "610129888834",
     'appId': "1:610129888834:web:64bfa75232a66633"
 }
+
 firebase = pyrebase.initialize_app(config)
 authe = firebase.auth()
 database = firebase.database()
