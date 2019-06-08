@@ -105,6 +105,6 @@ def logout(request):
                     </script>""")
     else:
         return HttpResponse("""<script type="text/javascript">
-                        alert('User not logged in. Can not sign out.')
+                        alert('User not logged in. Can not log out.')
                         window.location.href = "/signin"    
                         </script>""")

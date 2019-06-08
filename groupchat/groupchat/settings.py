@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b1kgozf#vcd0pm!j@2!@bsjrjg_k6qr^p&+ill&9%*qolnl7zm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 # remove * to allow only 127.0.0.1
 ALLOWED_HOSTS = ['*']
 
@@ -135,9 +135,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-staticDirectory = os.getcwd()
-staticDirectory = staticDirectory[:-9]
-staticDirectory+="chat/templates/static/"
+STATIC_URL = '/static/'
+
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
@@ -161,6 +160,3 @@ STATICFILES_DIRS = [
 #     staticDirectory + "vendor/",
 #
 # ]
-STATIC_URL = '/static/'
-
-print(staticDirectory+"css/")
