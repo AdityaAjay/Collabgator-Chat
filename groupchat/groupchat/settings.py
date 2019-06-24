@@ -137,7 +137,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 STATIC_URL = '/static/'
 
-
+#
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static"),
     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/',
@@ -150,6 +150,9 @@ STATICFILES_DIRS = [
     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/js/',
     '/home/aditya/Desktop/Collabgator/groupchat/chat/templates/static/vendor/',
 ]
+staticDirectory = os.getcwd()
+staticDirectory= staticDirectory[:-10]
+staticDirectory+="/chat/templates/static/"
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR,"static"),
 #     staticDirectory,
@@ -160,3 +163,4 @@ STATICFILES_DIRS = [
 #     staticDirectory + "vendor/",
 #
 # ]
+print(staticDirectory)
