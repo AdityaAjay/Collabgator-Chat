@@ -10,8 +10,8 @@
             //alert(location.pathname);
             var password = prompt("Enter Password : ", "your password here");
 
-            var roomID = ["CSE", "CSE3", "", "ECE"];
-            var roomPWD = ["csepassword", "cse3password", "", "ecepassword"];
+            var roomID = ["CSE", "CSE3", "", "ECE", "AMITY"];
+            var roomPWD = ["csepassword", "cse3password", "", "ecepassword", "amitypassword"];
 
             var room = (location.pathname).slice(6);
             var flag = false;
@@ -46,7 +46,7 @@
     <script>
         socket = new WebSocket("ws://" + window.location.host + "/" + location.pathname.replace('/', '') + "/");
         socket.onmessage = function (e) {
-            $('#mess').append('<p>' + '{{ email }}' + e.data + '</p>')
+            $('#mess').append('<p>' + e.data + '</p>')
             //add user's name here in append before e.data
             //figure out dynamic naming
         }
